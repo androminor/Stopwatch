@@ -1,1 +1,1 @@
-# A simple Satop-Watch app with nice colors.
+A simple Satop-Watch app with nice colors.
