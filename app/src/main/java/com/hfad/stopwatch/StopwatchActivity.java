@@ -1,4 +1,7 @@
 package com.hfad.stopwatch;
+/**
+ * Created by androminor on 22-Apr-18.
+ */
 
 import android.os.Bundle;
 import android.os.Handler;

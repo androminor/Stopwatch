@@ -3,7 +3,7 @@ package com.hfad.stopwatch;
 import android.view.View;
 
 /**
- * Created by admin on 10-Mar-18.
+ * Created by androminor on 10-Mar-18.
  */
 
 public interface StopwatchInterface {
