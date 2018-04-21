@@ -1,1 +1,1 @@
-# Stopwatch
+# A simple Satop-Watch app with nice colors.
