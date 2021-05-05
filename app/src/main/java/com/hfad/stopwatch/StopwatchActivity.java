@@ -32,27 +32,12 @@ public class StopwatchActivity extends Activity implements StopwatchInterface {
     protected void onPause() {
         super.onPause();
         wasRunning = running;
-      /* if(wasRunning = running) {
-           running = true;
-       }
-       else
-       {
-           running = false;
-       }*/
-      boolean wasRunning = running ?true : false;
-    }
+        }
 
     @Override
     protected void onResume() {
         super.onResume();
-       /* if (wasRunning) {
-            running = true;
-        }
-        else
-        {
-            running = false;
-        }*/
-       boolean wasRunning = running ? true : false;
+
     }
 
     @Override
@@ -81,22 +66,7 @@ public class StopwatchActivity extends Activity implements StopwatchInterface {
 
     }
 
-    //Start the stopwatch running when the Start button is clicked.
-   /* public void onClickStart(View view) {
-        running = true;
-    }
-    
-    //Stop the stopwatch running when the Stop button is clicked.
-    public void onClickStop(View view) {
-        running = false;
-    }
-    
-    //Reset the stopwatch when the Reset button is clicked.
-    public void onClickReset(View view) {
-        running = false;
-        seconds = 0;
-    }
-    */
+
     //Sets the number of seconds on the timer.
     public void runTimer() {
         final TextView timeView = (TextView) findViewById(R.id.time_view);
@@ -112,7 +82,7 @@ public class StopwatchActivity extends Activity implements StopwatchInterface {
                 if (running) {
                     seconds++;
                 }
-                handler.postDelayed(this, 1000);
+                handler.postDelayed(this, 0);
             }
         });
     }
