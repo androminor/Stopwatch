@@ -66,19 +66,6 @@ class StopwatchActivity : Activity(), StopwatchInterface {
     override fun runTimer() {
         val timeView = findViewById<View>(R.id.time_view) as TextView
         val handler = Handler()
-        /*  Looper.myLooper()?.let {
-            Handler(it).postDelayed({
-                //Your Code
-                val hours = seconds / 3600
-                val minutes = seconds % 3600 / 60
-                val secs = seconds % 60
-                val time = String.format("%d:%02d:%02d", hours, minutes, secs)
-                timeView.text = time
-                if (running) {
-                    seconds++
-                }
-            },0)
-        }*/
         handler.post(object : Runnable {
             override fun run() {
                 val hours = seconds / 3600
@@ -92,17 +79,7 @@ class StopwatchActivity : Activity(), StopwatchInterface {
                 handler.postDelayed(this, 0)
             }
         })
-      /*  Handler(Looper.getMainLooper()).postDelayed({
-            //Your Code
-            val hours = seconds / 3600
-            val minutes = seconds % 3600 / 60
-            val secs = seconds % 60
-            val time = String.format("%d:%02d:%02d", hours, minutes, secs)
-            timeView.text = time
-            if (running) {
-                seconds++
-            }
-        }, 0)*/
+
     }
 
 }
