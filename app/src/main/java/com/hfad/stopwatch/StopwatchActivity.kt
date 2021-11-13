@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.TextView
 
 /**
- * Created by androminor on 22-Apr-18.
+ * Created by Androminor on 22-Apr-18.
  */
 
 interface StopwatchInterface {
