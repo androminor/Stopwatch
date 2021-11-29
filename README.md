@@ -1,1 +1,1 @@
-A simple Stop-Watch app with nice colors.cincuand
+A simple Stop-Watch app with colours
