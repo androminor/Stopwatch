@@ -5,15 +5,18 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.TextView
+import kotlinx.android.synthetic.main.*
+import kotlinx.android.synthetic.main.activity_stopwatch.*
 
 /**
- * Created by Androminor on 22-Apr-18.
+ * Created by androminor on 22-Apr-18.
  */
 
 interface StopwatchInterface {
     fun onClickStart(view: View?)
-    fun onClickStop(view: View?)
+    fun onClickPause(view: View?)
     fun onClickReset(view: View?)
+    fun onClickResume(view:View?)
     fun runTimer()
 }
 class StopwatchActivity : Activity(), StopwatchInterface {
@@ -26,6 +29,7 @@ class StopwatchActivity : Activity(), StopwatchInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stopwatch)
+
         if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds")
             running = savedInstanceState.getBoolean("running")
@@ -37,11 +41,9 @@ class StopwatchActivity : Activity(), StopwatchInterface {
     override fun onPause() {
         super.onPause()
         wasRunning = running
+
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
 
     public override fun onSaveInstanceState(savedInstanceState: Bundle) {
         savedInstanceState.putInt("seconds", seconds)
@@ -50,17 +52,45 @@ class StopwatchActivity : Activity(), StopwatchInterface {
     }
 
     override fun onClickStart(view: View?) {
+        pause_button.visibility = View.VISIBLE
         running = true
     }
 
-    override fun onClickStop(view: View?) {
-        running = false
+    override fun onClickPause(view: View?) {
+            running = false
+            pause_button.visibility = View.GONE
+            resume_button.visibility = View.VISIBLE
+
     }
 
     override fun onClickReset(view: View?) {
         running = false
         seconds = 0
+        pause_button.visibility = View.GONE
+        resume_button.visibility = View.GONE
+
     }
+
+    override fun onClickResume(view: View?) {
+                if(running == true)
+                {
+                 seconds = 0
+                }
+           else {
+                    running = true
+                    pause_button.visibility = View.VISIBLE
+                    resume_button.visibility = View.GONE
+
+                }
+
+                }
+
+
+
+
+
+
+
 
     //Sets the number of seconds on the timer.
     override fun runTimer() {
